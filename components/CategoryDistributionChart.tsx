@@ -10,7 +10,7 @@ const COLORS=["#FF6B6B","#4D96FF", "#FFD166"," #06D6A0"," #A29BFF"]
 
 const CategoryDistributionChart = () => {
     const[categorydata,setcategorydata]=useState([])
-    const [isSmall0rMediumScreen,SetIsSmallOrMediumScreeen]=useState([])
+    const [isSmall0rMediumScreen,SetIsSmallOrMediumScreeen]=useState<boolean>(false);
 
     useEffect(()=>{
         fetch("/data/data.json")
@@ -20,7 +20,8 @@ const CategoryDistributionChart = () => {
 
     useEffect(()=>{
         const updateScreenSize=()=>{
-            SetIsSmallOrMediumScreeen(window. innerWidth<=768 as null)
+       SetIsSmallOrMediumScreeen(window.innerWidth <= 768);
+
         }
 
         updateScreenSize()
